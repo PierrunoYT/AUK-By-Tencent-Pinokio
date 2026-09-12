@@ -1,0 +1,9 @@
+app/
+env/
+logs/
+node_modules/
+.claude/
+.codex/
+.gemini/
+.open-edit/
+.DS_Store

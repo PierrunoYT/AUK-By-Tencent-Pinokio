@@ -1,0 +1,29 @@
+{
+  "title": "AuK by Tencent",
+  "description": "Run AuK Base and AuK-Flash locally for speech generation, editing, enhancement, and separation.",
+  "icon": "icon.png",
+  "links": [
+    {
+      "title": "Tencent AuK",
+      "links": [
+        {
+          "title": "GitHub",
+          "value": "https://github.com/Tencent-Hunyuan/AuK"
+        },
+        {
+          "title": "AuK model",
+          "value": "https://huggingface.co/tencent/AuK"
+        },
+        {
+          "title": "AuK-Flash model",
+          "value": "https://huggingface.co/tencent/AuK-Flash"
+        },
+        {
+          "title": "Hosted demo",
+          "value": "https://huggingface.co/spaces/tencent/AuK"
+        }
+      ]
+    }
+  ],
+  "posts": []
+}
