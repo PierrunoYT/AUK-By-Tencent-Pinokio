@@ -11,6 +11,11 @@ module.exports = {
       message: "git pull"
     }
   }, {
+    method: "shell.run",
+    params: {
+      message: "uv pip install click==8.3.1"
+    }
+  }, {
     when: "{{platform === 'win32'}}",
     method: "shell.run",
     params: {

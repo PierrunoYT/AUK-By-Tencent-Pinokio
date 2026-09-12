@@ -11,6 +11,12 @@ module.exports = {
       }
     },
     {
+      method: "shell.run",
+      params: {
+        message: "uv pip install click==8.3.1"
+      }
+    },
+    {
       when: "{{platform !== 'win32' && !exists('app/env')}}",
       method: "shell.run",
       params: {
