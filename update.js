@@ -11,9 +11,18 @@ module.exports = {
       message: "git pull"
     }
   }, {
+    when: "{{platform === 'win32'}}",
     method: "shell.run",
     params: {
-      venv: "env",
+      conda: "conda_env",
+      path: "app",
+      message: "conda install -y -c conda-forge pynini=2.1.7"
+    }
+  }, {
+    method: "shell.run",
+    params: {
+      venv: "{{platform === 'win32' ? null : 'env'}}",
+      conda: "{{platform === 'win32' ? 'conda_env' : null}}",
       path: "app",
       message: "uv pip install -e \".[gradio]\""
     }

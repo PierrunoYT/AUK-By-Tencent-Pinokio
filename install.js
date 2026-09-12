@@ -11,11 +11,23 @@ module.exports = {
       }
     },
     {
-      when: "{{!exists('app/env')}}",
+      when: "{{platform !== 'win32' && !exists('app/env')}}",
       method: "shell.run",
       params: {
         path: "app",
         message: "uv venv --python 3.10 env"
+      }
+    },
+    {
+      when: "{{platform === 'win32'}}",
+      method: "shell.run",
+      params: {
+        conda: {
+          path: "conda_env",
+          python: "3.10"
+        },
+        path: "app",
+        message: "conda install -y -c conda-forge pynini=2.1.7"
       }
     },
     // Delete this step if your project does not use torch
@@ -24,7 +36,8 @@ module.exports = {
       params: {
         uri: "torch.js",
         params: {
-          venv: "env",                // Edit this to customize the venv folder path
+          venv: "{{platform === 'win32' ? null : 'env'}}",                // Edit this to customize the venv folder path
+          conda: "{{platform === 'win32' ? 'conda_env' : null}}",
           path: "app",                // Edit this to customize the path to start the shell from
           // flashattention: true   // uncomment this line if your project requires flashattention
           // xformers: true   // uncomment this line if your project requires xformers
@@ -37,7 +50,8 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "env",                // Edit this to customize the venv folder path
+        venv: "{{platform === 'win32' ? null : 'env'}}",                // Edit this to customize the venv folder path
+        conda: "{{platform === 'win32' ? 'conda_env' : null}}",
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "uv pip install -e \".[gradio]\""

@@ -19,7 +19,7 @@ Models load lazily on first use. When Prompt Enhancer is disabled, set a duratio
 
 ## Command-line API
 
-After installation, run commands inside `app/env` from the `app` directory. For example:
+After installation, run commands inside `app/conda_env` on Windows or `app/env` on macOS/Linux from the `app` directory. For example:
 
 ```bash
 auk-infer --instruction "Generate a calm voice saying: Hello from AuK." --output output.wav --gen_seconds 4

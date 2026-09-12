@@ -6,6 +6,7 @@ module.exports = {
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
+        "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
           "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 {{args && args.xformers ? 'xformers==0.0.30' : ''}} --index-url https://download.pytorch.org/whl/cu128 --force-reinstall --no-deps",
@@ -23,6 +24,7 @@ module.exports = {
       "params": {
         "bluefairy": "off",
         "venv": "{{args && args.venv ? args.venv : null}}",
+        "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
           "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 {{args && args.xformers ? 'xformers==0.0.30' : ''}} --index-url https://download.pytorch.org/whl/cu128 --force-reinstall",
@@ -40,6 +42,7 @@ module.exports = {
       "params": {
         "bluefairy": "off",
         "venv": "{{args && args.venv ? args.venv : null}}",
+        "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch torch-directml torchaudio torchvision numpy==1.26.4 --force-reinstall"
       },
@@ -51,6 +54,7 @@ module.exports = {
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
+        "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/rocm6.3 --force-reinstall --no-deps"
       },
@@ -62,6 +66,7 @@ module.exports = {
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
+        "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cpu --force-reinstall --no-deps"
       },
@@ -73,6 +78,7 @@ module.exports = {
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
+        "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cpu --force-reinstall --no-deps"
       },
@@ -83,6 +89,7 @@ module.exports = {
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
+        "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0  --index-url https://download.pytorch.org/whl/cpu --force-reinstall --no-deps"
       }

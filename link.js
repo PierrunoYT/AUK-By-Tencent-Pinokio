@@ -3,7 +3,7 @@ module.exports = {
     {
       method: "fs.link",
       params: {
-        venv: "app/env"
+        venv: "{{platform === 'win32' ? 'app/conda_env' : 'app/env'}}"
       }
     }
   ]
