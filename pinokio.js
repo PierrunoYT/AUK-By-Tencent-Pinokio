@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
   version: "5.0",
-  title: "AuK",
+  title: "AuK by Tencent",
   description: "Unified local speech generation and editing with AuK Base and AuK-Flash",
   icon: "icon.png",
   menu: async (kernel, info) => {
