@@ -72,18 +72,6 @@ module.exports = {
       },
       "next": null
     },
-    // intel mac
-    {
-      "when": "{{platform === 'darwin' && arch !== 'arm64'}}",
-      "method": "shell.run",
-      "params": {
-        "venv": "{{args && args.venv ? args.venv : null}}",
-        "conda": "{{args && args.conda ? args.conda : null}}",
-        "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cpu --force-reinstall --no-deps"
-      },
-      "next": null
-    },
     // cpu
     {
       "method": "shell.run",

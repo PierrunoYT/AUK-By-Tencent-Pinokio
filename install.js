@@ -1,5 +1,14 @@
 module.exports = {
   run: [
+    // AuK requires torch 2.7, which PyTorch does not publish for Intel Macs
+    {
+      when: "{{platform === 'darwin' && arch !== 'arm64'}}",
+      method: "notify",
+      params: {
+        html: "AuK requires PyTorch 2.7, which is not available for Intel Macs. Use an Apple Silicon Mac, Windows, or Linux."
+      },
+      next: null
+    },
     // Edit this step to customize the git repository to use
     {
       when: "{{!exists('app')}}",
