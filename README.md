@@ -12,7 +12,7 @@ The installation downloads AuK Base, AuK-Flash, and the shared Qwen2.5-Omni-3B e
    - **Start Base + Flash** exposes both variants through the model selector in the Web UI.
    - **Start Base only** loads only the higher-quality Base variant.
    - **Start Flash only** loads only the faster four-step Flash variant.
-4. Open **Web UI** when it appears.
+4. Click **Open Web UI** when it appears.
 5. Enter an instruction and optionally provide source or reference audio.
 
 Models load lazily on first use. When Prompt Enhancer is disabled, set a duration greater than zero. Prompt Enhancer requires OpenAI-compatible `LLM_API_KEY`, `LLM_BASE_URL`, and `LLM_MODEL_NAME` environment variables; the rest of the interface works without them.
