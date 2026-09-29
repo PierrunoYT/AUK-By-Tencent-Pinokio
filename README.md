@@ -33,7 +33,7 @@ Use the Flash checkpoint by adding:
 
 ## Gradio API
 
-Use the URL shown by Pinokio in place of `http://127.0.0.1:7860`. Call `Client.view_api()` or open `/gradio_api/info` to inspect the schema exposed by the installed AuK revision.
+Use the URL shown by Pinokio in place of `http://127.0.0.1:7860`. The examples use the `"AuK (Base)"` variant; when started with **Start Flash only**, pass `"AuK-Flash ⚡"` instead, since only loaded variants are accepted. Call `Client.view_api()` or open `/gradio_api/info` to inspect the schema exposed by the installed AuK revision.
 
 ### Python
 
