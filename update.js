@@ -11,6 +11,7 @@ module.exports = {
       message: "git pull"
     }
   }, {
+    // Intentionally targets Pinokio's shared base environment: pins click so its `hf` CLI, used by hf.download, works
     method: "shell.run",
     params: {
       message: "uv pip install click==8.3.1"

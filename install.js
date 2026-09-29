@@ -19,6 +19,7 @@ module.exports = {
         ]
       }
     },
+    // Intentionally targets Pinokio's shared base environment: pins click so its `hf` CLI, used by hf.download, works
     {
       method: "shell.run",
       params: {
