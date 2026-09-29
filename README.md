@@ -2,7 +2,7 @@
 
 This launcher installs and runs [Tencent AuK](https://github.com/Tencent-Hunyuan/AuK) locally. AuK provides speech generation, content and acoustic editing, paralinguistic editing, speech enhancement, and source separation through natural-language instructions.
 
-The installation downloads AuK Base, AuK-Flash, and the shared Qwen2.5-Omni-3B encoder. These models require substantial disk space. An NVIDIA GPU is strongly recommended; CPU inference is available upstream but is significantly slower. Intel Macs are not supported because PyTorch 2.7, which AuK requires, is not published for them.
+The installation downloads AuK Base, AuK-Flash, and the shared Qwen2.5-Omni-3B encoder. These models require substantial disk space. An NVIDIA GPU is strongly recommended; CPU inference is available upstream but is significantly slower. AMD GPUs on Windows run on the CPU, because DirectML does not support PyTorch 2.7. Intel Macs are not supported because PyTorch 2.7, which AuK requires, is not published for them.
 
 ## Use
 

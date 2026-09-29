@@ -35,16 +35,15 @@ module.exports = {
       },
       "next": null
     },
-    // amd windows
+    // amd windows: torch-directml is pinned to an older torch than AuK's 2.7 requirement, so use CPU
     {
       "when": "{{gpu === 'amd' && platform === 'win32'}}",
       "method": "shell.run",
       "params": {
-        "bluefairy": "off",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "conda": "{{args && args.conda ? args.conda : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch torch-directml torchaudio torchvision numpy==1.26.4 --force-reinstall"
+        "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cpu --force-reinstall --no-deps"
       },
       "next": null
     },
