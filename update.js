@@ -25,6 +25,17 @@ module.exports = {
       message: "conda install -y -c conda-forge pynini=2.1.7"
     }
   }, {
+    // Reinstall the platform torch build first so the editable install cannot swap in a PyPI build
+    method: "script.start",
+    params: {
+      uri: "torch.js",
+      params: {
+        venv: "{{platform === 'linux' && arch === 'x64' ? 'env' : null}}",
+        conda: "{{platform === 'linux' && arch === 'x64' ? null : 'conda_env'}}",
+        path: "app"
+      }
+    }
+  }, {
     method: "shell.run",
     params: {
       venv: "{{platform === 'linux' && arch === 'x64' ? 'env' : null}}",
