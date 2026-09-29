@@ -16,18 +16,18 @@ module.exports = {
       message: "uv pip install click==8.3.1"
     }
   }, {
-    when: "{{platform === 'win32'}}",
+    when: "{{!(platform === 'linux' && arch === 'x64')}}",
     method: "shell.run",
     params: {
-      conda: "conda_env",
+      conda: "{{platform === 'linux' && arch === 'x64' ? null : 'conda_env'}}",
       path: "app",
       message: "conda install -y -c conda-forge pynini=2.1.7"
     }
   }, {
     method: "shell.run",
     params: {
-      venv: "{{platform === 'win32' ? null : 'env'}}",
-      conda: "{{platform === 'win32' ? 'conda_env' : null}}",
+      venv: "{{platform === 'linux' && arch === 'x64' ? 'env' : null}}",
+      conda: "{{platform === 'linux' && arch === 'x64' ? null : 'conda_env'}}",
       path: "app",
       message: "uv pip install -e \".[gradio]\""
     }

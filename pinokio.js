@@ -5,7 +5,7 @@ module.exports = {
   description: "Unified local speech generation and editing with AuK Base and AuK-Flash",
   icon: "icon.png",
   menu: async (kernel, info) => {
-    let environment = process.platform === "win32" ? "app/conda_env" : "app/env"
+    let environment = process.platform === "linux" && process.arch === "x64" ? "app/env" : "app/conda_env"
     let installed = info.exists(environment) && info.exists("app/ckpts/AuK/auk_base.safetensors") && info.exists("app/ckpts/AuK-Flash/auk_flash.safetensors") && info.exists("app/ckpts/Qwen2.5-Omni-3B")
     let running = {
       install: info.running("install.js"),

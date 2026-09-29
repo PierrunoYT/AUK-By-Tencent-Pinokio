@@ -26,7 +26,7 @@ module.exports = {
       }
     },
     {
-      when: "{{platform !== 'win32' && !exists('app/env')}}",
+      when: "{{platform === 'linux' && arch === 'x64' && !exists('app/env')}}",
       method: "shell.run",
       params: {
         path: "app",
@@ -34,7 +34,7 @@ module.exports = {
       }
     },
     {
-      when: "{{platform === 'win32'}}",
+      when: "{{!(platform === 'linux' && arch === 'x64')}}",
       method: "shell.run",
       params: {
         conda: {
@@ -51,8 +51,8 @@ module.exports = {
       params: {
         uri: "torch.js",
         params: {
-          venv: "{{platform === 'win32' ? null : 'env'}}",                // Edit this to customize the venv folder path
-          conda: "{{platform === 'win32' ? 'conda_env' : null}}",
+          venv: "{{platform === 'linux' && arch === 'x64' ? 'env' : null}}",                // Edit this to customize the venv folder path
+          conda: "{{platform === 'linux' && arch === 'x64' ? null : 'conda_env'}}",
           path: "app",                // Edit this to customize the path to start the shell from
           // flashattention: true   // uncomment this line if your project requires flashattention
           // xformers: true   // uncomment this line if your project requires xformers
@@ -65,8 +65,8 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "{{platform === 'win32' ? null : 'env'}}",                // Edit this to customize the venv folder path
-        conda: "{{platform === 'win32' ? 'conda_env' : null}}",
+        venv: "{{platform === 'linux' && arch === 'x64' ? 'env' : null}}",                // Edit this to customize the venv folder path
+        conda: "{{platform === 'linux' && arch === 'x64' ? null : 'conda_env'}}",
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "uv pip install -e \".[gradio]\""

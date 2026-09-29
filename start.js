@@ -4,8 +4,8 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "{{platform === 'win32' ? null : 'env'}}",                // Edit this to customize the venv folder path
-        conda: "{{platform === 'win32' ? 'conda_env' : null}}",
+        venv: "{{platform === 'linux' && arch === 'x64' ? 'env' : null}}",                // Edit this to customize the venv folder path
+        conda: "{{platform === 'linux' && arch === 'x64' ? null : 'conda_env'}}",
         env: { },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
