@@ -1,8 +1,7 @@
-const path = require('path')
 module.exports = {
   version: "5.0",
   title: "AuK by Tencent",
-  description: "Unified local speech generation and editing with AuK Base and AuK-Flash",
+  description: "Run AuK Base and AuK-Flash locally for speech generation, editing, enhancement, and separation.",
   icon: "icon.png",
   menu: async (kernel, info) => {
     let environment = process.platform === "linux" && process.arch === "x64" ? "app/env" : "app/conda_env"

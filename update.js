@@ -20,7 +20,7 @@ module.exports = {
     when: "{{!(platform === 'linux' && arch === 'x64')}}",
     method: "shell.run",
     params: {
-      conda: "{{platform === 'linux' && arch === 'x64' ? null : 'conda_env'}}",
+      conda: "conda_env",
       path: "app",
       message: "conda install -y -c conda-forge pynini=2.1.7"
     }
